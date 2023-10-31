@@ -3,13 +3,16 @@
     Todos los pokemon: 
 </h4>
 
-
-    <div class="d-flex flex-wrap justify-content-between" >
+    <div *ngIf="isLoading">
+        <app-preloader></app-preloader>
+    </div>
+    
+    <div class="d-flex flex-wrap justify-content-between" *ngIf="!isLoading">
         <!-- Card personalizada a cada pokemos, al clickar redirecciona a la pagina de detalles-->
         <div *ngFor="let pokemon of aPokemons" class="card mb-4 puntero-link"  style="width:12rem" [routerLink]="['/detail', pokemon.id]">
             <img src="{{ pokemon.urlImagen }}" alt="Imagen de perfil de {{ pokemon.name }}">
             <div class="card-body">
-                <h5 class="card-title">{{ pokemon.name }}</h5>
+                <h5 class="card-title">{{ pokemon.name | primeraLetraMayuscula}}</h5> <!--Estamos pasando al pipe como argumento pokemon.name-->
             </div>
         </div>
 

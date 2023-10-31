@@ -1,1 +1,22 @@
-<p>detail works!</p>
+<div>
+    
+    <div class="text-center">
+        <div class="">
+            <h2>{{ elPokemon.name }}</h2>
+            <img src="{{ elPokemon.imagen }}" alt="{{ elPokemon.name }}" class="imagen-pokemon">
+            <div class="flex">
+                <h4>Habilidades:</h4>
+                <p>-{{ elPokemon.abilities[0].ability.name }}</p>
+                <p>-{{ elPokemon.abilities[1].ability.name }}</p>
+            </div>
+            
+            <h5>Juegos en los que interviene:</h5>
+            <div class="d-flex flex-wrap justify-content-between align-items-start mb-5">
+                <div class="juego d-flex justify-content-center align-items-center mb-2" *ngFor="let nJuego of elPokemon.game_indices">
+                    {{ nJuego.version.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

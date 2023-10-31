@@ -18,6 +18,7 @@ export class PokemonService {
   }
 
   getPokemon(id:string):Observable<any>{
-    return this._http.get(this.url + '/' + id);
+    return this._http.get(this.url + id);
+    //return this._http.get(this.url + id);
   }
 }

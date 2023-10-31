@@ -12,6 +12,8 @@ import { ErrorComponent } from './componentes/error/error.component';
 import { ListComponent } from './componentes/list/list.component';
 import { ListTableComponent } from './componentes/list-table/list-table.component';
 import { DetailComponent } from './componentes/detail/detail.component';
+import { PrimeraLetraMayusculaPipe } from './pipes/primera-letra-mayuscula.pipe';
+import { PreloaderComponent } from './componentes/preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DetailComponent } from './componentes/detail/detail.component';
     ErrorComponent,
     ListComponent,
     ListTableComponent,
-    DetailComponent
+    DetailComponent,
+    PrimeraLetraMayusculaPipe,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

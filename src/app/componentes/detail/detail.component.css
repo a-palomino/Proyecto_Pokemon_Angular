@@ -1,0 +1,12 @@
+.imagen-pokemon{
+    width: 500px;
+    height: auto;
+}
+
+.juego{
+    width: 12%;
+    padding: 15px 0px;
+    background-color: darkgrey;
+    border-radius: 10px;
+    font-weight: bold;
+}

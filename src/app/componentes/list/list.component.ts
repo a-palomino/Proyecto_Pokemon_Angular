@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GLOBAL } from 'src/app/services/global';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -11,8 +12,10 @@ export class ListComponent implements OnInit{
   
   aPokemons:Array<any> = [];
   nPokemon:number = 50;
+  isLoading:boolean = true;
   constructor(
-    private _pokemonService:PokemonService
+    private _pokemonService:PokemonService,
+    private _router:Router
   ){
 
   }
@@ -32,8 +35,8 @@ export class ListComponent implements OnInit{
           pokemon.urlImagen = GLOBAL.URL_IMAGES + pokemon.id + '.png';
         }
       },
-      error:(error) => {},
-      complete: () => {}
+      error:(error) => {this._router.navigate(['error']);},
+      complete: () => {this.isLoading = false;}
     });
 
   }

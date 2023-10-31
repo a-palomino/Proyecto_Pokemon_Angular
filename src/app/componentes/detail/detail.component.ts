@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GLOBAL } from 'src/app/services/global';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -6,27 +8,54 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent implements OnInit{
+export class DetailComponent implements OnInit, OnDestroy{
   
-  pokemonId:string = "1";
-  aPokemon:Array<any> = [];
-  constructor(private _pokemonService:PokemonService){
+  pokemonId:string = "";
+  elPokemon:any = {};
+  constructor(
+    private _pokemonService:PokemonService,
+    private _route:ActivatedRoute, //Recoger parametros de la ruta activa
+    private _router:Router //Objeto que contiene metodos para trabajar
+    ){
 
   }
   
+  //HOOKS
   ngOnInit(): void {
     this.getDatos();
   }
 
+  ngOnDestroy(): void {
+    console.log("Detalle destruido");
+  }
+
+  //Metodos
+
+
+
   getDatos() {
+    //Recoger id de la ruta
+    this._route.params.subscribe({
+      next:(params) => {
+        this.pokemonId = params['id'];//Anotación corchete
+        //this.pokemonId = params.id;//Anotación punto
+        console.log(params);
+        
+      },
+      error:(error) => {
+        this._router.navigate(['error']);
+      }
+      ,
+      complete: () => {}
+    });
+
     this._pokemonService.getPokemon(this.pokemonId).subscribe({
       next:(result) => {
-        this.aPokemon = result;
-        console.log(this.aPokemon);
-        //Añadir atributo urlImagen (lipiamos url)
-        /*for(let pokemon of this.aPokemon){
+        this.elPokemon = result;
+        this.elPokemon.imagen = GLOBAL.URL_IMAGES + this.pokemonId + '.png';
+        console.log(this.elPokemon);
+         
         
-        }*/
       },
       error:(error) => {},
       complete: () => {}

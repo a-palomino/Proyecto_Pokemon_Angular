@@ -1,1 +1,22 @@
-<p>list-table works!</p>
+<div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IMAGEN</th>
+                <th>NOMBRE</th>
+                <th>LINK</th>
+            </tr>        
+        </thead>
+
+        <tbody>
+                <tr *ngFor="let pokemon of aPokemons">
+
+                    <td><img src="{{ pokemon.urlImagen }}" alt="Imagen de {{ pokemon.name }}" class="img-icono"></td>
+                    <td>{{ pokemon.name | primeraLetraMayuscula}}</td>
+                    <td><button type="button" class="btn btn-success">+info <a href="{{ pokemon.url }}"></a></button></td>
+                </tr>
+        </tbody>
+    </table>
+
+</div>
