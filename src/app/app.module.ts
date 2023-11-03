@@ -14,6 +14,7 @@ import { ListTableComponent } from './componentes/list-table/list-table.componen
 import { DetailComponent } from './componentes/detail/detail.component';
 import { PrimeraLetraMayusculaPipe } from './pipes/primera-letra-mayuscula.pipe';
 import { PreloaderComponent } from './componentes/preloader/preloader.component';
+import { PaginationComponent } from './componentes/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PreloaderComponent } from './componentes/preloader/preloader.component'
     ListTableComponent,
     DetailComponent,
     PrimeraLetraMayusculaPipe,
-    PreloaderComponent
+    PreloaderComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

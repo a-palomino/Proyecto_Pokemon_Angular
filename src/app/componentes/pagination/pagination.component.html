@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <ul class="pagination">
+            <li class="page-item">
+              <a  [ngClass]="{'page-link' : true, 'disabled' : pAnteriorBloqueado}" [routerLink]="['/list', nPokemons, pAnterior]" aria-label="Previous" >
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li [ngClass]="{'page-item' : true, 'disabled' : pAnteriorBloqueado}"><a class="page-link" [routerLink]="['/list', nPokemons, pAnterior]">{{ textoPAnterior }}</a></li>
+            <li class="page-item"><a class="page-link active" [routerLink]="['/list', nPokemons, pActual]">{{ textoPActual }}</a></li>
+            <li [ngClass]="{'page-item' : true, 'disabled' : pSiguienteBloqueado}"><a class="page-link" [routerLink]="['/list', nPokemons, pSiguiente]">{{ textoPSiguiente }}</a></li>
+            <li class="page-item">
+              <a [ngClass]="{'page-link' : true, 'disabled' : pSiguienteBloqueado}" [routerLink]="['/list', nPokemons, pSiguiente]" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+        </ul>
+    </div>
+</div>

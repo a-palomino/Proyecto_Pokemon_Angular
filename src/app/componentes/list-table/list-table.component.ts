@@ -12,6 +12,7 @@ export class ListTableComponent implements OnInit{
   
   aPokemons:Array<any> = [];
   nPokemon:number = 50;
+  nOffset:number = 50;
   constructor(
     private _pokemonService:PokemonService,
     private _router:Router
@@ -25,7 +26,7 @@ export class ListTableComponent implements OnInit{
 
   //Obtenemos los datos recogidos por el servicio de pokemon
   getDatos() {
-    this._pokemonService.getPokemons(this.nPokemon).subscribe({
+    this._pokemonService.getPokemons(this.nPokemon, this.nOffset).subscribe({
       next:(result) => {
         this.aPokemons = result.results;
         //Añadir atributo urlImagen (lipiamos url)

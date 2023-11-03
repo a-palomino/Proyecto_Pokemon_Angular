@@ -13,8 +13,8 @@ export class PokemonService {
     private _http:HttpClient
   ) { }
 
-  getPokemons(nPokemons:number):Observable<any>{
-    return this._http.get(this.url + '?limit='+nPokemons+'&offset=0');
+  getPokemons(nPokemons:number, nOffset:number):Observable<any>{
+    return this._http.get(this.url + '?limit='+nPokemons+'&offset=' + nOffset );
   }
 
   getPokemon(id:string):Observable<any>{

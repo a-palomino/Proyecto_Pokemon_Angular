@@ -1,10 +1,15 @@
 
 <h4>
-    Todos los pokemon: 
+    Todos los pokemon xddd: 
 </h4>
 
     <div *ngIf="isLoading">
         <app-preloader></app-preloader>
+    </div>
+
+    <!--Paginación-->
+    <div>
+        <app-pagination [nPokemons]="nPokemon" [pActual]="nOffset"></app-pagination>
     </div>
     
     <div class="d-flex flex-wrap justify-content-between" *ngIf="!isLoading">
@@ -18,4 +23,8 @@
 
     </div>
 
+    <!--Paginación-->
+    <div>
+        <app-pagination [nPokemons]="nPokemon" [pActual]="nOffset"></app-pagination>
+    </div>
 

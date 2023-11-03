@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"error", component:ErrorComponent},
   {path:"list", component:ListComponent},
+  {path:"list/:nPokemons/:offset", component:ListComponent},
   {path:"listTable", component:ListTableComponent},
   {path:"detail/:id", component:DetailComponent},
   {path:"**", component:ErrorComponent}//Esta ruta recoge cualquier busqueda que no este en el path (DEBE PONERSE EN ÚLTIMA POSICIÓN)
