@@ -1,7 +1,7 @@
 # POKESITE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
-I'm currently developing the website to being used as a Portfolio project. Feel free to contact me if you want me to add something.
+I'm currently developing the website to being used as a Portfolio project. Feel free to contact me if you want me to add new features.
 
 ## Development server
 
